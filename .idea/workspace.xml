@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e33d2a58-b114-4eb0-88c0-b289ba703636" name="Changes" comment="First Commit" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/forms/registration.form.tsx" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="31MslcBFTGZk57lcYwdQVQT47xp" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JavaScript Debug.localhost:5555.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "js.debugger.nextJs.config.created.client": "true",
+    "js.debugger.nextJs.config.created.server": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "C:/Users/remon/Desktop/MainFolder/nextjs/src/forms",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\remon\\Desktop\\MainFolder\\nextjs\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "to.speed.mode.migration.done": "true",
+    "ts.external.directory.path": "C:\\Users\\remon\\Desktop\\MainFolder\\nextjs\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\remon\Desktop\MainFolder\nextjs\src\forms" />
+      <recent name="C:\Users\remon\Desktop\MainFolder\nextjs\src\app\ingredients" />
+      <recent name="C:\Users\remon\Desktop\MainFolder\nextjs\src\components\UI\modals" />
+      <recent name="C:\Users\remon\Desktop\MainFolder\nextjs\src\app\login" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\remon\Desktop\MainFolder\nextjs\src\app\(protected)" />
+      <recent name="C:\Users\remon\Desktop\MainFolder\nextjs\src\app" />
+      <recent name="C:\Users\remon\Desktop\MainFolder\nextjs\src\app\(public)" />
+      <recent name="C:\Users\remon\Desktop\MainFolder\nextjs\src\providers" />
+      <recent name="C:\Users\remon\Desktop\MainFolder\nextjs\src\utils" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.localhost:5555">
+    <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
+      <method v="2" />
+    </configuration>
+    <configuration name="localhost:5555" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:5555">
+      <method v="2" />
+    </configuration>
+    <configuration name="Next.js: server-side" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.localhost:5555" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-WS-252.23892.411" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e33d2a58-b114-4eb0-88c0-b289ba703636" name="Changes" comment="" />
+      <created>1755345428095</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1755345428095</updated>
+      <workItem from="1755345429445" duration="13974000" />
+      <workItem from="1755426092800" duration="1976000" />
+      <workItem from="1755428698568" duration="5960000" />
+      <workItem from="1755434703873" duration="470000" />
+      <workItem from="1755436361013" duration="405000" />
+      <workItem from="1755436784543" duration="4263000" />
+      <workItem from="1755441139458" duration="4715000" />
+      <workItem from="1755514354715" duration="15972000" />
+      <workItem from="1755599800030" duration="3306000" />
+      <workItem from="1755608153088" duration="2056000" />
+      <workItem from="1755614980652" duration="1865000" />
+      <workItem from="1755688684277" duration="12980000" />
+      <workItem from="1755708522661" duration="4170000" />
+      <workItem from="1755712749263" duration="169000" />
+      <workItem from="1755714855477" duration="59000" />
+      <workItem from="1755772806638" duration="14406000" />
+      <workItem from="1755864899325" duration="317000" />
+      <workItem from="1755871941455" duration="3199000" />
+      <workItem from="1756041376904" duration="5691000" />
+      <workItem from="1756047231629" duration="1009000" />
+      <workItem from="1756204588794" duration="530000" />
+      <workItem from="1756205140090" duration="12927000" />
+      <workItem from="1756292628345" duration="6013000" />
+      <workItem from="1756298842155" duration="3288000" />
+      <workItem from="1756302158654" duration="1211000" />
+    </task>
+    <task id="LOCAL-00001" summary="First Commit">
+      <option name="closed" value="true" />
+      <created>1755362595023</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1755362595023</updated>
+    </task>
+    <task id="LOCAL-00002" summary="First Commit">
+      <option name="closed" value="true" />
+      <created>1755362628215</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1755362628215</updated>
+    </task>
+    <task id="LOCAL-00003" summary="First Commit">
+      <option name="closed" value="true" />
+      <created>1756302778438</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1756302778439</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.prisma" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="First Commit" />
+  </component>
+</project>
