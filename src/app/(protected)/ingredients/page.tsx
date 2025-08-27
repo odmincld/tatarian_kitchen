@@ -2,6 +2,7 @@
 
 import IngredientForm from '@/forms/ingredient.form';
 import IngredientsTable from '@/components/UI/tables/IngredientsTable';
+import MainPageTitle from '@/components/UI/layout/MainPageTitle';
 
 const IngredientsPage = () => {
   return (

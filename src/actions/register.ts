@@ -3,22 +3,21 @@
 import { IFormData } from '@/types/form-data';
 import prisma from '@/utils/prisma';
 import { saltAndHashPassword } from '@/utils/password';
+import { signInWithCredentials } from '@/actions/sign-in';
 
 export async function registerUser(formData: IFormData) {
   const { email, password, confirmPassword } = formData;
 
   if (password !== confirmPassword) return { error: 'Passwords do not match' };
 
-  if (password.length < 6)
+  if (password.length < 8)
     return { error: 'Password must be 8 characters or more. ' };
 
   try {
     const existingUser = await prisma.user.findUnique({
       where: { email },
     });
-    if (existingUser) {
-      return { error: 'User already exists' };
-    }
+    if (existingUser) return { error: 'User already exists' };
 
     const pwHash = await saltAndHashPassword(password);
 
@@ -28,6 +27,8 @@ export async function registerUser(formData: IFormData) {
         password: pwHash,
       },
     });
+
+    await signInWithCredentials(formData.email, formData.password);
 
     return user;
   } catch (error) {

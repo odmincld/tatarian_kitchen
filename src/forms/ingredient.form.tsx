@@ -1,78 +1,156 @@
 'use client';
 
-import { Button, Form, Input } from '@heroui/react';
-import * as React from 'react';
-import { signInWithCredentials } from '@/actions/sign-in';
-import { useState } from 'react';
+import React, { ChangeEvent, FC, useState, useTransition } from 'react';
+import { Button, Form, Input, Select, SelectItem } from '@heroui/react';
+import { CATEGORY_OPTIONS, UNIT_OPTIONS } from '@/constants/select-options';
+import { Textarea } from '@heroui/input';
+import toast, { Toaster } from 'react-hot-toast';
+import { useIngredientStore } from '@/store/ingredient.store';
 
-interface IProps {
-  onClose: () => void;
-}
+const LABEL_STYLES = "text-medium text-black after:content-['']";
+const INPUT_STYLES = {
+  inputWrapper: 'bg-default-100',
+  input: 'text-medium focus:outline-none',
+  label: LABEL_STYLES,
+};
+const VALIDATE_MESSAGES = {
+  name: 'Name is Required',
+  pricePerUnit: 'Price is Required',
+};
 
-const LoginForm = ({ onClose }: IProps) => {
-  const [errorLog, setErrorLog] = useState<string>('');
+const initialState = {
+  name: '',
+  category: '',
+  unit: '',
+  pricePerUnit: '',
+  description: '',
+};
 
-  const [formData, setFormData] = React.useState({
-    email: '',
-    password: '',
-  });
+const IngredientForm: FC = () => {
+  const [formData, setFormData] = useState(initialState);
+  const { addIngredient } = useIngredientStore();
+  const [isPending, startTransition] = useTransition();
 
-  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const result = await signInWithCredentials(
-      formData.email,
-      formData.password
-    );
-    if (result === null) {
-      setErrorLog('Check your email or password');
-    } else {
-      window.location.reload();
-      onClose();
-    }
+  const handlerSubmit = async (formData: FormData) => {
+    startTransition(async () => {
+      await addIngredient(formData);
+
+      const storeError = useIngredientStore.getState().error;
+
+      if (storeError) {
+        toast.error('Error adding ingredient');
+      } else {
+        setFormData(initialState);
+        toast.success('Ingredient added!');
+      }
+    });
   };
 
-  const onChange = (e: { target: { name: string; value: string } }) => {
-    if (errorLog) setErrorLog('');
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    const { name, value } = e.target;
+
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+  const validators: Record<string, (val: string) => string | null> = {
+    name: (val) => (!val ? VALIDATE_MESSAGES.name : null),
+    pricePerUnit: (val) => (!val ? VALIDATE_MESSAGES.pricePerUnit : null),
   };
 
   return (
-    <Form className={' flex flex-col gap-7 w-full'} onSubmit={onSubmit}>
+    <Form className="w-full gap-3" action={handlerSubmit}>
       <Input
         isRequired
-        aria-label="Email"
-        errorMessage="Please enter a valid email"
-        label="Email"
+        label="Name Ingredient"
         labelPlacement="inside"
-        name="email"
-        type="email"
-        value={formData.email}
-        onChange={onChange}
+        name="name"
+        type="text"
+        value={formData.name}
+        classNames={INPUT_STYLES}
+        onChange={handleChange}
+        validate={validators.name}
       />
 
-      <Input
-        isRequired
-        aria-label="Password"
-        label="Password"
+      <div className="grid grid-cols-3 w-full gap-2">
+        <Select
+          isRequired
+          label="Category"
+          labelPlacement="inside"
+          name="category"
+          selectedKeys={formData.category ? [formData.category] : []}
+          classNames={{ label: LABEL_STYLES }}
+          onChange={handleChange}
+        >
+          {CATEGORY_OPTIONS.map((option) => (
+            <SelectItem
+              key={option.value}
+              classNames={{ title: 'text-black text-medium' }}
+            >
+              {option.label}
+            </SelectItem>
+          ))}
+        </Select>
+
+        <Select
+          isRequired
+          label="Unit"
+          labelPlacement="inside"
+          name="unit"
+          selectedKeys={formData.unit ? [formData.unit] : []}
+          classNames={{ label: LABEL_STYLES }}
+          onChange={handleChange}
+        >
+          {UNIT_OPTIONS.map((option) => (
+            <SelectItem
+              key={option.value}
+              classNames={{ title: 'text-black text-medium' }}
+            >
+              {option.label}
+            </SelectItem>
+          ))}
+        </Select>
+
+        <Input
+          label="Price"
+          labelPlacement="inside"
+          name="pricePerUnit"
+          type="number"
+          value={formData.pricePerUnit}
+          classNames={INPUT_STYLES}
+          onChange={handleChange}
+          endContent={
+            <div className="pointer-events-none flex items-center">
+              <span className="text-black text-medium">$</span>
+            </div>
+          }
+        />
+      </div>
+
+      <Textarea
+        label="Description (Not Required)"
         labelPlacement="inside"
-        name="password"
-        type="password"
-        value={formData.password}
-        onChange={onChange}
+        name="description"
+        type="text"
+        value={formData.description}
+        classNames={INPUT_STYLES}
+        onChange={handleChange}
       />
 
-      {errorLog && <p className={'text-red-500'}>{errorLog}</p>}
+      <div className="flex w-full  h-[50px] justify-end relative">
+        <Toaster position="top-center" />
 
-      <div className="flex flex-col justify-center items-center w-full gap-5">
-        <Button className="w-full" type="button" onPress={onClose}>
-          Cancel
-        </Button>
-
-        <Button color={'primary'} className="w-full" type="submit">
-          Login
+        <Button
+          isLoading={isPending}
+          color={'primary'}
+          type="submit"
+          className="h-[50px]"
+        >
+          Add Ingredient
         </Button>
       </div>
     </Form>
   );
 };
-export default LoginForm;
+
+export default IngredientForm;

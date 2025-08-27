@@ -1,22 +1,30 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
-import { siteConfig } from '@/config/siteConfig';
+import usePageContent from '@/custom-hooks/usePageContent';
 
-const Title = () => {
-  const pathname = usePathname();
-
-  const currentNavItem = siteConfig.navItems.find(
-    (navItem) => navItem.href === pathname
-  );
-
-  const pageTitle = currentNavItem ? currentNavItem.label : siteConfig.title;
-
-  return (
-    <div>
-      <h1>{pageTitle}</h1>
-    </div>
-  );
+type MainPageTitleProps = {
+  name?: string;
 };
 
-export default Title;
+const MainPageTitle = ({ name }: MainPageTitleProps) => {
+  const currentPageContent = usePageContent();
+
+  const pageTitle = currentPageContent ? currentPageContent.title : '';
+
+  if (pageTitle) {
+    return (
+      <div className="w-full flex justify-center my-6">
+        <h1 className="text-3xl font-bold">{pageTitle}</h1>
+      </div>
+    );
+  }
+
+  if (name && !pageTitle) {
+    return (
+      <div className="w-full flex justify-center my-6">
+        <h1 className="text-3xl font-bold">{name}</h1>
+      </div>
+    );
+  }
+};
+export default MainPageTitle;
