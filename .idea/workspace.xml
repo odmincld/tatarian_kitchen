@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e33d2a58-b114-4eb0-88c0-b289ba703636" name="Changes" comment="First Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +132,7 @@
       <workItem from="1756292628345" duration="6013000" />
       <workItem from="1756298842155" duration="3288000" />
       <workItem from="1756302158654" duration="1552000" />
-      <workItem from="1756303854371" duration="11000" />
+      <workItem from="1756303854371" duration="1839000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
